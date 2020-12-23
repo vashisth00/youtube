@@ -26,6 +26,9 @@ function UploadVideoPage() {
     const [privacy, setPrivacy] = useState(0)
     const [Categories, setCategories] = useState("Film & Animation")
     const [FilePath, setFilePath] = useState("")
+    const [Duration, setDuration] = useState("")
+    const [thumbnail, setThumbnail] = useState("")
+    
 
     const handleChangeTitle = ( event ) => {
         setTitle(event.currentTarget.value)
@@ -69,6 +72,22 @@ function UploadVideoPage() {
                 setFilePath(response.data.filePath)
 
                 //gerenate thumbnail with this filepath ! 
+                axios.post('/api/video/thumbnail', variable)
+                .then(response => {
+                    if(response.data.success) {
+                        setDuration(response.data.fileDuration)
+                        setThumbnail(response.data.thumbsFilePath)
+                    } else {
+                        alert('Failed to make the thumbnails');
+                    }
+                })
+                .catch((error) => {
+                    if (error.response) { // if there is response, it means its not a 50x, but 4xx
+            
+                    } else {   // gets activated on 50x errors, since no response from server
+                      // do whatever you want here :)
+                    }     
+                 } )
                 
             } else {
                 alert('failed to save the video in server')
@@ -100,11 +119,11 @@ function UploadVideoPage() {
                     )}
                 </Dropzone>
 
-                {/* {thumbnail !== "" &&
+                {thumbnail !== "" &&
                     <div>
-                        <img src={`http://localhost:5000/${thumbnail}`} alt="haha" />
+                        <img src={`http://localhost:5001/${thumbnail}`} alt="haha" />
                     </div>
-                } */}
+                }
             </div>
 
             <br /><br />

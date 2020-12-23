@@ -56,6 +56,16 @@ if (process.env.NODE_ENV === "production") {
 
 const port = process.env.PORT || 5001
 
-app.listen(port, () => {
+// app.listen(port, () => {
+//   console.log(`Server Listening on ${port}`)
+//  // debug('Express server listening on port ' + server.address().port);
+// });
+//request.setTimeout(42000)
+//server.timeout = 1000;
+
+var server = app.listen(app.get('port'), function() {
   console.log(`Server Listening on ${port}`)
+  server.address().port
+ // debug('Express server listening on port ' + server.address().port);
 });
+server.timeout = 402000;
