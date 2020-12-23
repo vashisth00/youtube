@@ -14,7 +14,7 @@ function App() {
   return (
     <Suspense fallback={(<div>Loading...</div>)}>
       <NavBar />
-      <div style={{ paddingTop: '75px', minHeight: 'calc(100vh - 80px)' }}>
+      <div style={{    backgroundColor: '#fbfae4', paddingTop: '135px', minHeight: 'calc(100vh - 80px)' }}>
         <Switch>
           <Route exact path="/" component={Auth(LandingPage, null)} />
           <Route exact path="/login" component={Auth(LoginPage, false)} />

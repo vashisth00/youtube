@@ -20,6 +20,7 @@
 }
 
 .menu__container .ant-menu-item {
+  margin-top: 30px;
   padding: 0px 5px;
 }
 
