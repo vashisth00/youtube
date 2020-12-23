@@ -3,7 +3,7 @@ import LeftMenu from './Sections/LeftMenu';
 import RightMenu from './Sections/RightMenu';
 import { Drawer, Button, Icon } from 'antd';
 import './Sections/Navbar.css';
-const Logo = require('../../../assets/images/unravel.png');
+const Logo = require('../../../assets/images/unravel1.png');
 
 function NavBar() {
   const [visible, setVisible] = useState(false)
