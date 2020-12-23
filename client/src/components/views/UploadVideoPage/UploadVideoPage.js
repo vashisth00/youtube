@@ -16,6 +16,8 @@ const Catogory = [
     { value: 0, label: "Film & Animation" },
     { value: 0, label: "Autos & Vehicles" },
     { value: 0, label: "Music" },
+    { value: 0, label: "Coding" },
+    { value: 0, label: "Indian" },
     { value: 0, label: "Pets & Animals" },
     { value: 0, label: "Sports" },
 ]

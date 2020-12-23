@@ -1,3 +1,4 @@
 module.exports = {
-    mongoURI:process.env.MONGO_URI
+    mongoURI:'mongodb+srv://vashisth:vashisth@cluster0.r5f4j.mongodb.net/vashisth?retryWrites=true&w=majority'
+
 }

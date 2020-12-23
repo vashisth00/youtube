@@ -1,5 +1,5 @@
 {
-  "name": "react-boiler-plate",
+  "name": "youtube-video",
   "version": "1.0.0",
   "description": "react boiler plate",
   "main": "index.js",
@@ -11,9 +11,10 @@
     "start": "node server/index.js",
     "backend": "nodemon server/index.js",
     "frontend": "npm run start --prefix client",
-    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
+    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
+    "heroku-postbuild":"npm install --prefix client"
   },
-  "author": "John ahn",
+  "author": "Vashisth Bhushan",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.6",
