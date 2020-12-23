@@ -25,7 +25,7 @@ function UploadVideoPage() {
     const [Description, setDescription] = useState("");
     const [privacy, setPrivacy] = useState(0)
     const [Categories, setCategories] = useState("Film & Animation")
-
+    const [FilePath, setFilePath] = useState("")
 
     const handleChangeTitle = ( event ) => {
         setTitle(event.currentTarget.value)
@@ -86,6 +86,7 @@ function UploadVideoPage() {
         <Form onSubmit={onSubmit}>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <Dropzone 
+                    onDrop={onDrop}
                     multiple={false}
                     maxSize={800000000}>
                     {({ getRootProps, getInputProps }) => (
