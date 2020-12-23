@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react'
 import { Typography, Button, Form, message, Input, Icon } from 'antd';
 import Dropzone from 'react-dropzone';
+import axios from 'axios';
 
 const { Title } = Typography;
 const { TextArea } = Input;
@@ -46,6 +47,34 @@ function UploadVideoPage() {
 
     const onSubmit = () => {
         
+    }
+
+    const onDrop = ( files ) => {
+
+        let formData = new FormData();
+        const config = {
+            header: { 'content-type': 'multipart/form-data' }
+        }
+        console.log(files)
+        formData.append("file", files[0])
+
+        axios.post('/api/video/uploadfiles', formData, config)
+        .then(response=> {
+            if(response.data.success){
+
+                let variable = {
+                    filePath: response.data.filePath,
+                    fileName: response.data.fileName
+                }
+                setFilePath(response.data.filePath)
+
+                //gerenate thumbnail with this filepath ! 
+                
+            } else {
+                alert('failed to save the video in server')
+            }
+        })
+
     }
 
     return (
