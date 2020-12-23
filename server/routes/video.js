@@ -14,12 +14,14 @@ var storage = multer.diskStorage({
     },
     fileFilter: (req, file, cb) => {
         const ext = path.extname(file.originalname)
-        if (ext !== '.mp4') {
+        if (ext !== '.mp4' || ext !=='.jpg' || ext !== '.mov') {
             return cb(res.status(400).end('only jpg, png, mp4 is allowed'), false);
         }
         cb(null, true)
     }
 })
+
+// change single file to multiple if multiple
 
 var upload = multer({ storage: storage }).single("file")
 
